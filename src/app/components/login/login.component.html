@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col mb-3">
+      <h1 class="text-center">Вход в аккаунт</h1>
+      <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+        <div class="mb-3">
+          <label for="login" class="form-label">Логин</label>
+          <input type="text" class="form-control" id="login" name="login" formControlName="login" >
+          <div class="alert alert-danger" *ngIf="myForm.controls['login'].invalid && myForm.controls['login'].touched">Неверно заполнено поле</div>
+        </div>        
+        <div class="mb-3">
+          <label for="password" class="form-label">Пароль</label>
+          <input type="password" class="form-control" id="password" formControlName="password" >
+          <div class="alert alert-danger" *ngIf="myForm.controls['password'].invalid && myForm.controls['password'].touched">Неверно заполнено поле</div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Войти</button>
+      </form>
+    </div>
+  </div>
+</div>

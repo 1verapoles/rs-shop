@@ -1,0 +1,95 @@
+<div class="header-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex align-items-center flex-wrap py-8 bd">
+        <div class="d-flex align-items-center location mr-auto">
+          <svg xmlns="http://www.w3.org/2000/svg" width="10" height="13" viewBox="0 0 10 13" fill="none" class=""><path fill-rule="evenodd" clip-rule="evenodd" d="M10 5L10 5.00001C10 5.28878 9.97552 5.57184 9.92852 5.84721C9.31782 9.54574 5 13 5 13C5 13 0.68203 9.54563 0.0714481 5.84702C0.02447 5.57171 0 5.28871 0 5.00001V5C0 2.23858 2.23858 0 5 0C7.76142 0 10 2.23858 10 5ZM5 7C6.10457 7 7 6.10457 7 5C7 3.89543 6.10457 3 5 3C3.89543 3 3 3.89543 3 5C3 6.10457 3.89543 7 5 7Z" fill="currentColor"></path></svg>
+          <select class="form-select city-select" aria-label="Default select example">
+            <option selected>{{ city || "Минск"}} </option>
+            <option value="1">Витебск</option>
+            <option value="2">Гомель</option>
+            <option value="3">Гродно</option>
+            <option value="4">Могилев</option>
+            <option value="5">Брест</option>
+            <option value="6">Минск</option>
+          </select>
+        </div>
+        <div class="d-flex align-items-center inform">
+          <div class="d-flex align-items-center cont">
+            <a href="https://www.viber.com/21vek.by" target="_blank" rel="noopener noreferrer" class="contacts-block-item viber">Viber</a>
+            <a href="tel:+375293021021" rel="noopener noreferrer" class="contacts-block-item a1">+375 29 302 10 21</a>
+            <div class="dropdown">
+              <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Еще
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item"><a href="tel:+375255021021" rel="noopener noreferrer" class="contacts-block-item life">+375 25 502 10 21</a></a></li>
+                <li><a class="dropdown-item"><a href="tel:+375173021021" rel="noopener noreferrer" class="contacts-block-item home">+375 17 302 10 21</a></a></li>
+                <li><a class="dropdown-item"><a href="http://t.me/e21vekbot" target="_blank" rel="noopener noreferrer" class="contacts-block-item telegram">Telegram</a></a></li>
+                <li><a class="dropdown-item"><a href="mailto:21@21vek.by" target="_blank" rel="noopener noreferrer" class="contacts-block-item email">Почта</a></a></li>
+             </ul>
+            </div>
+          </div>
+            <div class="styles_workingTime__rHW66"><div class="styles_workingTimeIcon__6GIWp"><div class="" data-testid=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class=""><path fill-rule="evenodd" clip-rule="evenodd" d="M19 12.5C19 16.0899 16.0899 19 12.5 19C8.91015 19 6 16.0899 6 12.5C6 8.91015 8.91015 6 12.5 6C16.0899 6 19 8.91015 19 12.5ZM20 12.5C20 16.6421 16.6421 20 12.5 20C8.35786 20 5 16.6421 5 12.5C5 8.35786 8.35786 5 12.5 5C16.6421 5 20 8.35786 20 12.5ZM13 9H12C12 10.6667 12 12.3333 12 14H15V13H13V9Z" fill="currentColor"></path></svg></div></div><div class="styles_workingTimeText__1I_iD">контакт-центр<div>с&nbsp;<time>8:00</time>&nbsp;до&nbsp;<time>22:00</time></div></div></div>
+         </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="d-flex align-items-center justify-content-center pb-2 flex-wrap">
+           <a routerLink="/"><img class="logo" src="../../../assets/logo.png" alt="logo"></a>
+           <button type="button" routerLink="/catalog" class="styles_catalogButton__1K6kI"><span class="styles_label__34P-p">Каталог товаров</span></button>
+           <div class="searchFieldInputwrap flex-grow-1"><button type="submit" name="sa" class="searchFieldSubmit" title="Искать"><svg class="input-svg" width="14" height="14" viewBox="0 0 14 14" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.4406 10.3108C13.392 7.80345 13.2153 4.17663 10.9107 1.87197C8.4147 -0.623991 4.36794 -0.623991 1.87197 1.87197C-0.623991 4.36794 -0.623991 8.4147 1.87197 10.9107C4.17662 13.2153 7.80344 13.392 10.3108 11.4406L12.3058 13.5368C12.6152 13.8619 13.1317 13.8683 13.449 13.551C13.7555 13.2445 13.7616 12.7495 13.4628 12.4356L11.4406 10.3108ZM9.7857 9.77595C11.6528 7.90359 11.6512 4.87216 9.78083 3.00181C7.90886 1.12984 4.87379 1.12984 3.00181 3.00181C1.12984 4.87379 1.12984 7.90886 3.00181 9.78083C4.87216 11.6512 7.90359 11.6528 9.77595 9.7857C9.77758 9.78408 9.77921 9.78246 9.78083 9.78083C9.78245 9.77921 9.78408 9.77758 9.7857 9.77595Z"></path></svg></button><input type="text" id="j-search" (keyup)="onKeyUp($event)" placeholder="Поиск товаров" name="term" class="searchFieldInput ui-autocomplete-input j-ga_track" data-ga_action="change" data-ga_on="change" data-ga_label="this.value" data-ga_category="Search" autocomplete="off" aria-autocomplete="list" aria-haspopup="true" data-lpignore="true" value="" role="textbox">
+          <div class="results" *ngIf="searchItems.length">
+            <ul class="results__ul">
+              <li class="results__li" *ngFor="let product of searchItems">
+                <a routerLink="/goods/item/{{product.id}}">{{product.name}}</a>
+              </li>
+            </ul>
+          </div>
+          </div> 
+           <div class="dropdown account">
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                      <div class="styles_userTools__2J7cp"><div class="styles_wrapper__30C-H"><div><div>
+                        <button type="button" class="styles_userToolsToggler__imcSl">
+                          <div class="styles_userToolsIcon__Yya7_"><div class="" data-testid="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="">
+                             <path fill="currentColor" d="M16.2 3.25C17.1665 3.25 17.95 4.0335 17.95 5V17C17.95 17.9665 17.1665 18.75 16.2 18.75H8.8C7.8335 18.75 7.05 17.9665 7.05 17V15H8.55V17C8.55 17.1381 8.66193 17.25 8.8 17.25H16.2C16.3381 17.25 16.45 17.1381 16.45 17V5C16.45 4.86193 16.3381 4.75 16.2 4.75H8.8C8.66193 4.75 8.55 4.86193 8.55 5V6.99998H7.05V5C7.05 4.0335 7.8335 3.25 8.8 3.25H16.2Z"></path><path fill="currentColor" d="M9.96967 9.03031C9.67678 8.73742 9.67677 8.26255 9.96967 7.96966C10.2626 7.67676 10.7374 7.67676 11.0303 7.96965L13.5303 10.4696C13.671 10.6103 13.75 10.801 13.75 10.9999C13.75 11.1989 13.671 11.3896 13.5303 11.5303L11.0303 14.0303C10.7374 14.3232 10.2626 14.3232 9.96967 14.0303C9.67678 13.7374 9.67677 13.2625 9.96967 12.9697L11.1894 11.7499H5C4.58579 11.7499 4.25 11.4142 4.25 10.9999C4.25 10.5857 4.58579 10.2499 5 10.2499H11.1893L9.96967 9.03031Z"></path></svg></div></div><span class="userToolsText">Аккаунт</span></button></div></div></div></div>
+                             
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                      <li><div class="dropdown-item">
+                        <div class="d-flex flex-column account">
+                          <img src="../../../assets/avatar.svg" alt="user" class="av">
+                          <button routerLink="/users/login" class="btn btn-primary my-3">Войти</button>
+                          <ul class="av__ul mb-1">
+                            <li class="av__li"><a class="av__a" routerLink="/users/register">Зарегистрироваться</a></li>
+                            <li class="av__li"><a class="av__a" routerLink="/users/favorites">Избранные товары</a></li>
+                            <li class="av__li"><a class="av__a" routerLink="/users/cart">Корзина</a></li>
+                            <li class="av__li"><a class="av__a" routerLink="/users/order">Лист ожидания</a></li>
+                          </ul>
+                          <button class="btn btn-primary my-1" (click)="logout()">Выйти</button>
+                        </div>
+                      </div></li>
+                     </ul>
+                  </div>
+                  <div class="headerCart"><a class="headerCartBox headerCartBoxEmpty" routerLink="/users/cart"><span class="headerCartIcon"><div class="" data-testid=""><svg class="input-svg" xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="currentColor" class=""><path fill-rule="evenodd" clip-rule="evenodd" d="M12.0539 9.47368C12.6658 9.47368 13.2042 9.13921 13.4816 8.63342L16.1492 3.33895C16.4511 2.80053 16.0595 2.13158 15.4395 2.13158H4.43447L3.66763 0.5H1.31579C0.865241 0.5 0.5 0.865241 0.5 1.31579C0.5 1.76634 0.865242 2.13158 1.31579 2.13158H2.63158L5.56842 8.32342L4.36842 10.0921C3.77289 11.1853 4.35211 12.1316 5.59211 12.1316H13.75C14.2006 12.1316 14.5658 11.7663 14.5658 11.3158C14.5658 10.8652 14.2005 10.5 13.75 10.5H6L6.79211 9.47368H12.0539ZM5.20947 3.76316H14.0526L12.0539 7.84211H7.14289L5.20947 3.76316ZM8.75 14.5724C8.75 15.3608 8.11083 16 7.32237 16C6.53391 16 5.89474 15.3608 5.89474 14.5724C5.89474 13.7839 6.53391 13.1447 7.32237 13.1447C8.11083 13.1447 8.75 13.7839 8.75 14.5724ZM12.2171 16C13.0056 16 13.6447 15.3608 13.6447 14.5724C13.6447 13.7839 13.0056 13.1447 12.2171 13.1447C11.4287 13.1447 10.7895 13.7839 10.7895 14.5724C10.7895 15.3608 11.4287 16 12.2171 16Z"></path></svg></div><span data-testid="header-count" class="headerCartCount"></span></span><span class="headerCartLabel d-block">Корзина</span></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="violet">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <ul class="d-flex align-items-center justify-content-center flex-wrap nav__ul">
+          <li class="nav__li" *ngFor="let item of categories">
+            <a routerLink="/goods/category/{{item.id}}" class="nav__a">{{item.name}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+.hit {
+    display: inline-block;
+    margin-top: 2px;
+    text-transform: uppercase;
+    font: bold 8px/15px Verdana, sans-serif;
+    background: url(../../../assets/g-free_label.png) 100% 0 repeat-y;
+    vertical-align: top;
+    line-height: 17px;
+    height: 17px;
+    font-size: 10px;
+    padding: 0 16px 0 6px;
+    color: #ffffff;
+    background-color: #E0366F;
+}
+
+.car-img {
+    height: 400px;
+    max-width: 200px;
+    object-fit: cover;
+}
+
+.gray {
+    background-color: #000 !important;
+    height: 7px !important;
+}
+
+.gray.active {
+    background-color: rgb(59, 46, 238) !important;
+}
+
+.slide {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.carousel-inner {
+    width: 200px !important;
+    margin: 0 auto;
+} 

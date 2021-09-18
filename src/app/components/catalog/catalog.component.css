@@ -1,0 +1,21 @@
+.catalog__a {
+  text-decoration: none;
+  color: #000;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.catalog__a:hover {
+  color: #941E94;
+}
+
+.pl-3 {
+  padding-left: 20px !important;
+}
+
+.categ__img {
+  width: 60px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 7px;
+}

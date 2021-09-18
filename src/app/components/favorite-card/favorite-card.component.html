@@ -1,0 +1,10 @@
+<div class="d-flex card-product">
+  <img class="card-im" [src]="product.imageUrls[0]" [alt]="product.name"> 
+  <a class="card-l" routerLink="/goods/item/{{product.id}}">{{product.name | slice:0:50}}</a>
+  <div class="mb-3 mt-3 amount"> В наличии - {{product.availableAmount}}</div>
+  <div class="mb-3">{{product.price | currency:"BYN" : "бел. рублей" }}</div>
+  <div *ngIf="product.rating == 0" class="no-stars"></div>
+  <div><img src="../../../assets/i-rate-filled.svg" [alt]="item" *ngFor="let item of productRating" /></div>
+  <button class="btn btn-primary mb-3 mt-3" (click)="deleteFromFavorite()" [ngClass]="{disabled:!product.isFavorite}" type="button">Удалить из избранного</button>
+  <button class="btn btn-primary" (click)="addToCart()" [ngClass]="{disabled:product.isInCart}" type="button">{{product.isInCart ? "В корзинe" : "В корзину"}}</button>
+</div>
