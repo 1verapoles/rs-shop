@@ -34,9 +34,9 @@ export class OrderComponent implements OnInit {
       alert("Удалять заказы может только авторизованный пользователь. Пожалуйста, авторизуйтесь!");
       return;
     }
-    // this.productService.deleteData(`http://localhost:3004/users/order?id=${order.id}`, this.token).subscribe((data: any) => {
+    this.productService.deleteData(`http://localhost:3004/users/order?id=${order.id}`, this.token).subscribe((data: any) => {
     this.store.dispatch(deleteOrder({ order }));
-    // });
+    });
   }
 
 }
