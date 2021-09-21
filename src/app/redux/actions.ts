@@ -44,16 +44,6 @@ export const addOrder = createAction(
   props<{ order: Order }>()
 );
 
-// export const increaseQty = createAction(
-//   'increase quantity in cart',
-//   props<{ product: Product }>()
-// );
-
-// export const addProductToCart = createAction(
-//   'add to cart',
-//   props<{ id: string }>()
-// );
-
 export const addProductToCart = createAction(
   'add to cart',
   props<{ product: Product }>()
@@ -63,13 +53,3 @@ export const addUser = createAction(
   'add user',
   props<{ user: User }>()
 );
-
-// export const addProductToUserFavorite = createAction(
-//   'add to user favourite',
-//   props<{ product: Product }>()
-// );
-
-// export const addProductToUserCart = createAction(
-//   'add to user cart',
-//   props<{ product: Product }>()
-// );

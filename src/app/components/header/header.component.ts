@@ -27,29 +27,9 @@ export class HeaderComponent implements OnInit {
   constructor(private productService: ProductService, private http: HttpClient, private store: Store, private router: Router) { }
 
   ngOnInit(): void {
-    // this.productService.getData("http://ip-api.com/json").subscribe((data: any) => {
-    //   if (data.status === 'success') { this.city = data.city; console.log(this.city); }
-    // });
-    // var header = {
-    //   headers: new HttpHeaders()
-    //     .set('Authorization', `Bearer 58ebfdf7f1f558c5c86e17f6`)
-    // }
-    // this.productService.getData("http://localhost:3004/users/userInfo", header).subscribe((data: any) => {
-    //   console.log(data);
-    // });
-    // this.http.post<any>('http://localhost:3004/users/register', { "firstName": "string", "lastName": "string", "login": "string", "password": "string" }).subscribe(data => {
-    //   console.log(data);
-    // })
-    // localStorage.setItem('user', JSON.stringify({
-    //   "firstName": "Carlson",
-    //   "lastName": "Marsh",
-    //   "token": "58ebfdf7279c92a711dc8918",
-    //   "login": "Sparks",
-    //   "password": "consectetur",
-    //   "cart": [],
-    //   "favorites": [],
-    //   "orders": []
-    // }));
+    this.productService.getData("http://ip-api.com/json").subscribe((data: any) => {
+      if (data.status === 'success') { this.city = data.city;}
+    });
     this.productService.getData("http://localhost:3004/categories").subscribe((categories: any) => {
       if (categories.length) {
         this.categories = categories.map((el: Category, i: number) => ({ ...el, img: this.img[i] }));

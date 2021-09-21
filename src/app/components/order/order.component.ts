@@ -25,7 +25,6 @@ export class OrderComponent implements OnInit {
       .subscribe(orderProducts => {
         if (orderProducts) {
           this.orderProducts = orderProducts;
-          console.log(this.orderProducts);
         }
       });
   }

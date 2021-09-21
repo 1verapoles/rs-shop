@@ -14,37 +14,7 @@ export const initialState: State = {
   products: [],
   categories: [],
   user: {
-    "cart": [], "favorites": [], "orders": [
-      {
-        cartTotal: 594.31,
-        details: {
-          address: "fgv",
-          comment: "hf",
-          name: "vnd",
-          phone: "+8",
-          timeToDeliver: "2021-09-21 12:33"
-        },
-        id: "2",
-        items: [{
-          availableAmount: 11,
-          category: "electronics",
-          description: "aute commodo laboris minim veniam duis velit reprehenderit laboris aliqua cillum pariatur anim officia quis aliqua excepteur dolor laboris reprehenderit labore ipsum sunt aliqua elit consectetur do excepteur eu elit magna eu est ullamco non commodo sint cupidatat commodo fugiat",
-          id: "612e05c5f00b2207b3dfba3b",
-          imageUrls: [
-            "https://cdn21vek.by/img/galleries/390/365/preview_b/tm204_texet_02_57e3c5352af48.jpeg",
-            "https://cdn21vek.by/img/galleries/390/365/preview_b/tm204_texet_02_57e3c4f3c0a1a.jpeg",
-            "https://cdn21vek.by/img/galleries/390/365/preview_b/tm204_texet_02_57e3c534abdcc.jpeg"],
-          isFavorite: false,
-          isInCart: true,
-          name: "Мобильный телефон Texet TM-204 (красный)",
-          orderQty: 1,
-          price: 594.31,
-          rating: 3,
-          subCategory: "mobile",
-          total: 594.31
-        }]
-      }
-    ]
+    "cart": [], "favorites": [], "orders": []
   }
 };
 

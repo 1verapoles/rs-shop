@@ -78,41 +78,45 @@ export class CartComponent implements OnInit {
   }
 
   submit() {
-    // alert(`ФИО - ${this.myForm.value.userName}\n Адрес доставки - ${this.myForm.value.address}\n Номер телефона - ${this.myForm.value.tel}\n Желаемая дата доставки - ${this.myForm.value.date}\n Желаемое время доставки - ${this.myForm.value.time}\n Комментарий к заказу - ${this.myForm.value.comment}\nВаш заказ создан успешно, ожидайте доставку в указанное время`);
-    if (!this.token) {
+     if (!this.token) {
       alert("Добавлять товары в заказы может только авторизованный пользователь. Пожалуйста, авторизуйтесь!");
       return;
     }
-    // this.store.dispatch(addOrder({
-    //   order: {
-    //     "items": this.cartProducts,
-    //     "details": {
-    //       "name": this.myForm.value.userName,
-    //       "address": this.myForm.value.address,
-    //       "phone": this.myForm.value.tel,
-    //       "timeToDeliver": `${this.myForm.value.date} ${this.myForm.value.time}`,
-    //       "comment": this.myForm.value.comment
-    //     },
-    //     "id": (Math.random() * 10).toFixed(0),
-    //     "cartTotal": this.cartTotal
-    //   }
-    // }));
+    let un = this.myForm.value.userName;
+    let addr = this.myForm.value.address;
+    let te = this.myForm.value.tel;
+    let da = this.myForm.value.date;
+    let ti = this.myForm.value.time;
+    let com = this.myForm.value.comment;
     this.productService.postData1("http://localhost:3004/users/order", {
       "items": this.cartProducts.map(product => ({ id: product.id, amount: product.orderQty })),
       "details": {
-        "name": this.myForm.value.userName,
-        "address": this.myForm.value.address,
-        "phone": this.myForm.value.tel,
-        "timeToDeliver": `${this.myForm.value.date} ${this.myForm.value.time}`,
-        "comment": this.myForm.value.comment
+        "name": un,
+        "address": addr,
+        "phone": te,
+        "timeToDeliver": `${da} ${ti}`,
+        "comment": com
       }
     }, this.token).subscribe((data: any) => {
-      console.log(8);
-      // this.productService.getDataLogin("http://localhost:3004/users/userInfo", this.token);
-      // this.store.dispatch(addOrder({ product: this.product }));
-    });
-    // console.log(this.myForm.value);
-    // this.myForm.reset();
+      this.productService.getDataLogin("http://localhost:3004/users/userInfo", this.token).subscribe((data: any) => {
+        this.store.dispatch(addOrder({
+        order: {
+          "items": this.cartProducts,
+          "details": {
+            "name": un,
+            "address": addr,
+            "phone": te,
+            "timeToDeliver": `${da} ${ti}`,
+            "comment": com
+          },
+          "id": data.orders[data.orders.length - 1].id,
+          "cartTotal": this.cartTotal
+        }
+      }));
+      });
+    });   
+    alert(`ФИО - ${un}\n Адрес доставки - ${addr}\n Номер телефона - ${te}\n Желаемая дата доставки - ${da}\n Желаемое время доставки - ${ti}\n Комментарий к заказу - ${com}\nВаш заказ создан успешно, ожидайте доставку в указанное время`);
+     this.myForm.reset();
   }
 
 }

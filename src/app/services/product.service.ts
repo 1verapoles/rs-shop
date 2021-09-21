@@ -29,7 +29,6 @@ export class ProductService {
           }
         }
       }
-      console.log(products);
       this.store.dispatch(addAllProducts({ products }));
     });
   }
