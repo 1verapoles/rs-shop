@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a routerLink="/goods/category/{{categoryId}}">{{loadedByTenGoods[0] && categoryName}}</a></li>
+          <li class="breadcrumb-item"><a routerLink="/goods/category/{{categoryId}}/{{subCategoryId}}">{{loadedByTenGoods[0] && subCategoryName}}</a></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="sort mb-3">
+        <span class="sort-block">Сортировать по:</span>
+        <button class="sort-btn" (click)="changeSortOrderPopularity()">популярности</button><span class="sort-span" *ngIf="sortOrderPopularity === true"> &uarr;</span><span class="sort-span" *ngIf="sortOrderPopularity === false"> &darr;</span>
+        <button class="sort-btn" (click)="changeSortOrderPrice()">цене</button><span class="sort-span" *ngIf="sortOrderPrice === true"> &uarr;</span><span class="sort-span" *ngIf="sortOrderPrice === false"> &darr;</span>
+    </div>
+    </div>
+  </div>
+<div class="row">
+  <div class="col">
+    <div class="d-flex flex-wrap justify-content-space-evenly" *ngIf="loadedByTenGoods.length">
+      <app-product-card *ngFor="let item of loadedByTenGoods | sortPopularity : sortOrderPopularity | sortPrice : sortOrderPrice" 
+      [product]="item" [appAmount]="item.availableAmount"></app-product-card>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <div class="d-flex justify-content-center mt-3 mb-3">
+      <button class="btn btn-primary" [ngClass]="{disabled: isDisabled}" (click)="showMoreGoods()" type="button">Показать больше</button>
+    </div>
+  </div>
+</div>
+
+</div>

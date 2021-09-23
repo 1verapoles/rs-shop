@@ -1,0 +1,81 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-center my-3">Корзина</h1>
+      <div class="mb-3" *ngIf="token === undefined">Информация о товарах в корзине доступна только для авторизованных пользователей</div>
+    </div>
+  </div>
+  <div class="row" *ngIf="token"> 
+    <div class="col">
+      <div class="mb-3" *ngIf="cartProducts.length === 0">У вас нет товаров в корзине</div>
+      <table class="table mb-3">
+        <thead>
+          <tr>
+            <th scope="col">Изображение</th>
+            <th scope="col">Название</th>
+            <th scope="col">Описание</th>
+            <th scope="col">Количество</th>
+            <th scope="col">Срок доставки</th>
+            <th scope="col">Стоимость, бел.рублей</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cartProducts">
+            <td> <img class="card-im" [src]="item.imageUrls[0]" [alt]="item.name">
+              <button class="btn btn-primary mt-2 d-block" (click)="deleteFromCart(item)" type="button">Удалить</button>
+            </td>
+            <td class="table-link" routerLink="/goods/item/{{item.id}}">{{item.name | slice:0:30}}</td>
+            <td>{{item.description | slice:0:50}}</td>
+            <td> 
+              <div class="d-flex align-items-center">
+                <div class="custom-btn" (click)="minus(item)">-</div>
+                <div class="custom-btn">{{item.orderQty}}</div>
+                <div class="custom-btn" (click)="plus(item)">+</div>
+              </div> 
+              </td>
+            <td>Сегодня</td>
+            <td>{{item.total | currency : "BYN" : "" }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="text-end mb-3">Итого: {{cartTotal | currency : "BYN" : "бел.рублей" }}</div>
+    </div>
+  </div>
+  <div class="row" *ngIf="token">
+    <div class="col mb-3">
+      <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+        <div class="mb-3">
+          <label for="userName" class="form-label">ФИО</label>
+          <input type="text" class="form-control" id="userName" name="userName" formControlName="userName" >
+          <div class="alert alert-danger" *ngIf="myForm.controls['userName'].invalid && myForm.controls['userName'].touched">Неверно заполнено поле</div>
+        </div>        
+        <div class="mb-3">
+          <label for="address" class="form-label">Адрес доставки</label>
+          <input type="text" class="form-control" id="address" formControlName="address" >
+          <div class="alert alert-danger" *ngIf="myForm.controls['address'].invalid && myForm.controls['address'].touched">Неверно заполнено поле</div>
+        </div>
+        <div class="mb-3">
+          <label for="tel" class="form-label">Номер телефона</label>
+          <input type="tel" class="form-control" id="tel" formControlName="tel" >
+          <div class="alert alert-danger" *ngIf="myForm.controls['tel'].invalid && myForm.controls['tel'].touched">Неверно заполнено поле</div>
+        </div>
+        <div class="mb-3">
+          <label for="date" class="form-label">Желаемая дата доставки</label>
+          <input type="date" class="form-control" id="date" formControlName="date" >
+          <div class="alert alert-danger" *ngIf="myForm.controls['date'].invalid && myForm.controls['date'].touched">Неверно заполнено поле</div>
+        </div>
+        <div class="mb-3">
+          <label for="time" class="form-label">Желаемое время доставки</label>
+          <input type="time" class="form-control" id="time" formControlName="time" >
+          <div class="alert alert-danger" *ngIf="myForm.controls['time'].invalid && myForm.controls['time'].touched">Неверно заполнено поле</div>
+        </div>
+        <div class="mb-3">
+          <label for="comment" class="form-label">Комментарий к заказу</label>
+          <textarea class="form-control" id="comment" formControlName="comment"  rows="3"></textarea>
+          <div class="alert alert-danger" *ngIf="myForm.controls['comment'].invalid && myForm.controls['comment'].touched">Неверно заполнено поле</div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Подтвердить заказ</button>
+      </form>
+    </div>
+  </div>
+</div>

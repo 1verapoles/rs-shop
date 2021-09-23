@@ -1,0 +1,20 @@
+.error-wrapper {
+    height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.error-text {
+    font-size: 26px;
+    line-height: 28px;
+    font-weight: 700;
+    color: #828282;
+    margin-left: 25px;
+}

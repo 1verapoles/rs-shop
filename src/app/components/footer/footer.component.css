@@ -1,0 +1,125 @@
+.footer {
+  background-color: rgb(247,248,250);
+}
+
+.social {
+  width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(23,35,38, 0.05);
+    margin: 0 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    transition: all .2s ease-out;
+}
+
+.social-inner {
+  display: flex;
+  justify-content: center;
+}
+
+.blue {
+  fill: #0072BC;
+}
+
+.wk:hover .social {
+  background-color: rgb(68, 125, 189);
+}
+
+.fb:hover .social {
+  background-color: rgb(68, 105, 176);
+}
+
+.wk:hover .blue, .fb:hover .blue, .i:hover .blue {
+  fill: #fff;
+}
+
+.red {
+  fill: red;
+}
+
+.y:hover .social {
+  background-color: red;
+}
+
+.y:hover .red {
+  fill: #fff;
+}
+
+.orange {
+  fill: #FA9019;
+}
+
+.violet {
+  fill: #833AB4;
+}
+
+.o:hover .orange, .i:hover .violet  {
+  fill: #fff;
+}
+
+.o:hover .social {
+  background-color: #FA9019;
+}
+
+.i:hover .social {
+  background-color: #833AB4;
+}
+
+.contacts-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+  border-top: 1px solid rgba(213,215,219,0.5);
+  border-bottom: 1px solid rgba(213,215,219,0.5);
+}
+
+.a1 {
+  background-image: url('../../../assets/a1.de3ceabd.svg');
+}
+
+.life {
+  background-image: url('../../../assets/life.8271d8ce.svg');
+}
+
+.home {
+  background-image: url('../../../assets/home.2d0cc007.svg');
+}
+
+.viber {
+  background-image: url('../../../assets/viber.b2028260.svg');
+}
+
+.telegram {
+  background-image: url('../../../assets/telegram.77a5f275.svg');
+}
+
+.email {
+  background-image: url('../../../assets/email.a0f692b1.svg');
+}
+
+ .contacts-block-item {
+   display: block;
+  text-decoration: none;
+  font-family: Arial,sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #000;
+  font-size: 14px;
+  line-height: 24px;
+  padding-left: 26px;
+  border: 0;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.contacts-block-item:hover {
+  color: red;
+}

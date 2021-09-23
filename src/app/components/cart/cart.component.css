@@ -1,0 +1,30 @@
+input.ng-touched.ng-invalid {border:solid red 2px;}
+input.ng-touched.ng-valid {border:solid green 2px;}
+
+.alert {
+  margin-top: 15px;
+}
+
+.card-im {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.table-link {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+
+.custom-btn {
+  padding: 5px 10px;
+  border: 1px solid #000;
+  cursor: pointer;
+  font-weight: 700;
+  user-select: none;
+}
+
+.custom-btn:first-child, .custom-btn:last-child {
+  background-color: gray;
+}

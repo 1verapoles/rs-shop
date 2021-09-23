@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="row mb-3">
+    <div class="col-4 d-flex flex-column border-end">
+       <a class="catalog__a" (mouseenter)="showSubcategories(categ.id)" routerLink="/goods/category/{{categ.id}}" *ngFor="let categ of categories"><img class="categ__img" [src]="categ.img" [alt]="categ.name">   {{categ.name}}</a>
+    </div>  
+    <div class="col-8 d-flex flex-column pl-3">
+      <a  class="catalog__a" routerLink="/goods/category/{{category?.id}}/{{subcategory?.id}}" *ngFor="let subcategory of category?.subCategories">{{subcategory.name}}</a>
+       </div>
+  </div>
+</div>

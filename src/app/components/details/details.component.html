@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a routerLink="/goods/category/{{ currentProduct.category }}">{{
+              categoryName
+            }}</a>
+          </li>
+          <li class="breadcrumb-item">
+            <a
+              routerLink="/goods/category/{{ currentProduct.category }}/{{
+                currentProduct.subCategory
+              }}"
+              >{{ subCategoryName }}</a
+            >
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-end">
+      <span *ngIf="currentProduct.rating === 5" class="hit">Хит</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h1>{{ currentProduct.name }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            [attr.data-bs-slide-to]="i"
+            *ngFor="let item of currentProduct.imageUrls; let i = index"
+            [ngClass]="{ active: item === currentProduct.imageUrls[0] }"
+            class="gray"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div
+            class="carousel-item car-img"
+            [ngClass]="{ active: item === currentProduct.imageUrls[0] }"
+            *ngFor="let item of currentProduct.imageUrls"
+          >
+            <img src="{{ item }}" class="d-block w-100" alt="{{ item }}" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="d-flex flex-wrap justify-content-center my-3">
+        <button
+          class="btn btn-primary mx-3"
+          (click)="addToFavorite()"
+          [ngClass]="{ disabled: currentProduct.isFavorite }"
+          type="button"
+        >
+          {{ currentProduct.isFavorite ? "В избранном" : "В избранное" }}
+        </button>
+        <button
+          class="btn btn-primary"
+          (click)="addToCart()"
+          [ngClass]="{ disabled: currentProduct.isInCart }"
+          type="button"
+        >
+          {{ currentProduct.isInCart ? "В корзинe" : "В корзину" }}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col mb-3">
+      <h2 class="text-center">Описание товара</h2>
+      <div>{{ currentProduct.description }}</div>
+    </div>
+  </div>
+</div>
